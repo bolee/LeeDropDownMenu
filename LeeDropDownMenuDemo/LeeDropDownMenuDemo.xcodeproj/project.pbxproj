@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C73A995202CB57C2DC1C0E9 /* Pods_LeeDropDownMenuDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93D0DAA21D2CC3026B94A22 /* Pods_LeeDropDownMenuDemoUITests.framework */; };
 		9BF771A522DDCA76008554FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771A422DDCA76008554FB /* AppDelegate.m */; };
 		9BF771A822DDCA76008554FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771A722DDCA76008554FB /* ViewController.m */; };
 		9BF771AB22DDCA76008554FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF771A922DDCA76008554FB /* Main.storyboard */; };
@@ -20,6 +21,10 @@
 		9BF771E722DDCB26008554FB /* LeeDDMenuIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771E222DDCB26008554FB /* LeeDDMenuIndexPath.m */; };
 		9BF771E822DDCB26008554FB /* LeeDDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771E322DDCB26008554FB /* LeeDDMenuView.m */; };
 		9BF771E922DDCB26008554FB /* LeeDDMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771E522DDCB26008554FB /* LeeDDMenuCell.m */; };
+		9BF771EC22DDCE85008554FB /* LeeDropDownMenu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF771EB22DDCE85008554FB /* LeeDropDownMenu.xcassets */; };
+		9BF771EF22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771EE22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m */; };
+		A5E06DD8AAEFC65D1B2B7114 /* Pods_LeeDropDownMenuDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33B76AE847AFD6D2CFC94D6 /* Pods_LeeDropDownMenuDemo.framework */; };
+		ABD24A6A79427F0D43FEF6E0 /* Pods_LeeDropDownMenuDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F697155351520EC40333F599 /* Pods_LeeDropDownMenuDemoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02A04716F1733D442E5F6F31 /* Pods-LeeDropDownMenuDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeeDropDownMenuDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-LeeDropDownMenuDemoUITests/Pods-LeeDropDownMenuDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		265EAB7E1DBEEBDB1E8C1087 /* Pods-LeeDropDownMenuDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeeDropDownMenuDemoTests.release.xcconfig"; path = "Target Support Files/Pods-LeeDropDownMenuDemoTests/Pods-LeeDropDownMenuDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		4835F0839D8D48BAB24BADC8 /* Pods-LeeDropDownMenuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeeDropDownMenuDemo.debug.xcconfig"; path = "Target Support Files/Pods-LeeDropDownMenuDemo/Pods-LeeDropDownMenuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF771A022DDCA76008554FB /* LeeDropDownMenuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeeDropDownMenuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF771A322DDCA76008554FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BF771A422DDCA76008554FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +78,15 @@
 		9BF771E322DDCB26008554FB /* LeeDDMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeDDMenuView.m; sourceTree = "<group>"; };
 		9BF771E422DDCB26008554FB /* LeeDDMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeDDMenu.h; sourceTree = "<group>"; };
 		9BF771E522DDCB26008554FB /* LeeDDMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeDDMenuCell.m; sourceTree = "<group>"; };
+		9BF771EB22DDCE85008554FB /* LeeDropDownMenu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LeeDropDownMenu.xcassets; sourceTree = "<group>"; };
+		9BF771ED22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+leeDD_ImageTitle.h"; sourceTree = "<group>"; };
+		9BF771EE22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+leeDD_ImageTitle.m"; sourceTree = "<group>"; };
+		AA6B1230D8F5BBCBB3B80751 /* Pods-LeeDropDownMenuDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeeDropDownMenuDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-LeeDropDownMenuDemoTests/Pods-LeeDropDownMenuDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B33B76AE847AFD6D2CFC94D6 /* Pods_LeeDropDownMenuDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeeDropDownMenuDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1CAA4DF3959E65CD9C26F03 /* Pods-LeeDropDownMenuDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeeDropDownMenuDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-LeeDropDownMenuDemoUITests/Pods-LeeDropDownMenuDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C93D0DAA21D2CC3026B94A22 /* Pods_LeeDropDownMenuDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeeDropDownMenuDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A609DA44AA2A7163E7F7AF /* Pods-LeeDropDownMenuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeeDropDownMenuDemo.release.xcconfig"; path = "Target Support Files/Pods-LeeDropDownMenuDemo/Pods-LeeDropDownMenuDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F697155351520EC40333F599 /* Pods_LeeDropDownMenuDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeeDropDownMenuDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E06DD8AAEFC65D1B2B7114 /* Pods_LeeDropDownMenuDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD24A6A79427F0D43FEF6E0 /* Pods_LeeDropDownMenuDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +110,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C73A995202CB57C2DC1C0E9 /* Pods_LeeDropDownMenuDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012811F112343CDF3D8A27CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4835F0839D8D48BAB24BADC8 /* Pods-LeeDropDownMenuDemo.debug.xcconfig */,
+				E4A609DA44AA2A7163E7F7AF /* Pods-LeeDropDownMenuDemo.release.xcconfig */,
+				AA6B1230D8F5BBCBB3B80751 /* Pods-LeeDropDownMenuDemoTests.debug.xcconfig */,
+				265EAB7E1DBEEBDB1E8C1087 /* Pods-LeeDropDownMenuDemoTests.release.xcconfig */,
+				C1CAA4DF3959E65CD9C26F03 /* Pods-LeeDropDownMenuDemoUITests.debug.xcconfig */,
+				02A04716F1733D442E5F6F31 /* Pods-LeeDropDownMenuDemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4376CBEDCBDFF024BACD41B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B33B76AE847AFD6D2CFC94D6 /* Pods_LeeDropDownMenuDemo.framework */,
+				F697155351520EC40333F599 /* Pods_LeeDropDownMenuDemoTests.framework */,
+				C93D0DAA21D2CC3026B94A22 /* Pods_LeeDropDownMenuDemoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9BF7719722DDCA76008554FB = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +149,8 @@
 				9BF771BE22DDCA77008554FB /* LeeDropDownMenuDemoTests */,
 				9BF771C922DDCA77008554FB /* LeeDropDownMenuDemoUITests */,
 				9BF771A122DDCA76008554FB /* Products */,
+				012811F112343CDF3D8A27CD /* Pods */,
+				4376CBEDCBDFF024BACD41B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +203,7 @@
 		9BF771D922DDCB25008554FB /* LeeDropDownMenu */ = {
 			isa = PBXGroup;
 			children = (
+				9BF771EB22DDCE85008554FB /* LeeDropDownMenu.xcassets */,
 				9BF771E422DDCB26008554FB /* LeeDDMenu.h */,
 				9BF771E122DDCB26008554FB /* LeeDDMenuAppearance.h */,
 				9BF771DE22DDCB26008554FB /* LeeDDMenuCell.h */,
@@ -169,6 +216,8 @@
 				9BF771E322DDCB26008554FB /* LeeDDMenuView.m */,
 				9BF771DF22DDCB26008554FB /* UIView+leeDDExtension.h */,
 				9BF771DA22DDCB25008554FB /* UIView+leeDDExtension.m */,
+				9BF771ED22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.h */,
+				9BF771EE22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m */,
 			);
 			name = LeeDropDownMenu;
 			path = ../LeeDropDownMenu;
@@ -181,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BF771CF22DDCA77008554FB /* Build configuration list for PBXNativeTarget "LeeDropDownMenuDemo" */;
 			buildPhases = (
+				FE4FC668E3205DEBF7CF185C /* [CP] Check Pods Manifest.lock */,
 				9BF7719C22DDCA76008554FB /* Sources */,
 				9BF7719D22DDCA76008554FB /* Frameworks */,
 				9BF7719E22DDCA76008554FB /* Resources */,
+				23D79AF79F7D3484CE6CDCCB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BF771D222DDCA77008554FB /* Build configuration list for PBXNativeTarget "LeeDropDownMenuDemoTests" */;
 			buildPhases = (
+				AA896DAB5C4AD7AFA02D1DBA /* [CP] Check Pods Manifest.lock */,
 				9BF771B722DDCA77008554FB /* Sources */,
 				9BF771B822DDCA77008554FB /* Frameworks */,
 				9BF771B922DDCA77008554FB /* Resources */,
@@ -216,6 +268,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BF771D522DDCA77008554FB /* Build configuration list for PBXNativeTarget "LeeDropDownMenuDemoUITests" */;
 			buildPhases = (
+				82F680AB1426D2B37549AF70 /* [CP] Check Pods Manifest.lock */,
 				9BF771C222DDCA77008554FB /* Sources */,
 				9BF771C322DDCA77008554FB /* Frameworks */,
 				9BF771C422DDCA77008554FB /* Resources */,
@@ -278,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF771EC22DDCE85008554FB /* LeeDropDownMenu.xcassets in Resources */,
 				9BF771B322DDCA77008554FB /* LaunchScreen.storyboard in Resources */,
 				9BF771B022DDCA77008554FB /* Assets.xcassets in Resources */,
 				9BF771AB22DDCA76008554FB /* Main.storyboard in Resources */,
@@ -300,12 +354,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23D79AF79F7D3484CE6CDCCB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LeeDropDownMenuDemo/Pods-LeeDropDownMenuDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LeeDropDownMenuDemo/Pods-LeeDropDownMenuDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LeeDropDownMenuDemo/Pods-LeeDropDownMenuDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82F680AB1426D2B37549AF70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LeeDropDownMenuDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA896DAB5C4AD7AFA02D1DBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LeeDropDownMenuDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE4FC668E3205DEBF7CF185C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LeeDropDownMenuDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9BF7719C22DDCA76008554FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9BF771E622DDCB26008554FB /* UIView+leeDDExtension.m in Sources */,
+				9BF771EF22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m in Sources */,
 				9BF771E722DDCB26008554FB /* LeeDDMenuIndexPath.m in Sources */,
 				9BF771A822DDCA76008554FB /* ViewController.m in Sources */,
 				9BF771AE22DDCA76008554FB /* LeeDropDownMenuDemo.xcdatamodeld in Sources */,
@@ -481,6 +622,7 @@
 		};
 		9BF771D022DDCA77008554FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4835F0839D8D48BAB24BADC8 /* Pods-LeeDropDownMenuDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +641,7 @@
 		};
 		9BF771D122DDCA77008554FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4A609DA44AA2A7163E7F7AF /* Pods-LeeDropDownMenuDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -517,6 +660,7 @@
 		};
 		9BF771D322DDCA77008554FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA6B1230D8F5BBCBB3B80751 /* Pods-LeeDropDownMenuDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +680,7 @@
 		};
 		9BF771D422DDCA77008554FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 265EAB7E1DBEEBDB1E8C1087 /* Pods-LeeDropDownMenuDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -555,6 +700,7 @@
 		};
 		9BF771D622DDCA77008554FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1CAA4DF3959E65CD9C26F03 /* Pods-LeeDropDownMenuDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 938DGA49XL;
@@ -573,6 +719,7 @@
 		};
 		9BF771D722DDCA77008554FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A04716F1733D442E5F6F31 /* Pods-LeeDropDownMenuDemoUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 938DGA49XL;

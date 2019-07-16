@@ -1,0 +1,6 @@
+framework module Pods_LeeDropDownMenuDemoTests {
+  umbrella header "Pods-LeeDropDownMenuDemoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
