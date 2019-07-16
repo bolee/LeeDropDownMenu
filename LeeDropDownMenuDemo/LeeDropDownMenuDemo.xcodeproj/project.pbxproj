@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -127,7 +127,6 @@
 				C1CAA4DF3959E65CD9C26F03 /* Pods-LeeDropDownMenuDemoUITests.debug.xcconfig */,
 				02A04716F1733D442E5F6F31 /* Pods-LeeDropDownMenuDemoUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -167,6 +166,7 @@
 		9BF771A222DDCA76008554FB /* LeeDropDownMenuDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9BF771E422DDCB26008554FB /* LeeDDMenu.h */,
 				9BF771A322DDCA76008554FB /* AppDelegate.h */,
 				9BF771A422DDCA76008554FB /* AppDelegate.m */,
 				9BF771A622DDCA76008554FB /* ViewController.h */,
@@ -204,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				9BF771EB22DDCE85008554FB /* LeeDropDownMenu.xcassets */,
-				9BF771E422DDCB26008554FB /* LeeDDMenu.h */,
 				9BF771E122DDCB26008554FB /* LeeDDMenuAppearance.h */,
 				9BF771DE22DDCB26008554FB /* LeeDDMenuCell.h */,
 				9BF771E522DDCB26008554FB /* LeeDDMenuCell.m */,

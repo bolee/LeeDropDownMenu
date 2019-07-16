@@ -7,6 +7,7 @@
 //
 
 #import "LeeDDMenuCell.h"
+#import "UIView+leeDDExtension.h"
 
 @implementation LeeDDMenuCell
 {

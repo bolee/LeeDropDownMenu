@@ -18,6 +18,8 @@ typedef NS_ENUM(NSInteger, LeeDDMenuTitleAlignment) {
 };
 
 @class LeeDDMenuView;
+@class LeeDDMenuIndexPath;
+
 @protocol LeeDDMenuAppearance <NSObject>
 @optional
 // title：标题显示属性
