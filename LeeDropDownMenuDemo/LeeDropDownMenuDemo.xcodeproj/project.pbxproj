@@ -166,7 +166,6 @@
 		9BF771A222DDCA76008554FB /* LeeDropDownMenuDemo */ = {
 			isa = PBXGroup;
 			children = (
-				9BF771E422DDCB26008554FB /* LeeDDMenu.h */,
 				9BF771A322DDCA76008554FB /* AppDelegate.h */,
 				9BF771A422DDCA76008554FB /* AppDelegate.m */,
 				9BF771A622DDCA76008554FB /* ViewController.h */,
@@ -217,6 +216,7 @@
 				9BF771DA22DDCB25008554FB /* UIView+leeDDExtension.m */,
 				9BF771ED22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.h */,
 				9BF771EE22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m */,
+				9BF771E422DDCB26008554FB /* LeeDDMenu.h */,
 			);
 			name = LeeDropDownMenu;
 			path = ../LeeDropDownMenu;
