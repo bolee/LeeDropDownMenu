@@ -9,7 +9,9 @@
 #ifndef LeeDDMenu_h
 #define LeeDDMenu_h
 
+#import "UIButton+leeDD_ImageTitle.h"
 #import "UIView+leeDDExtension.h"
+
 #import "LeeDDMenuDelegate.h"
 #import "LeeDDMenuDataSource.h"
 #import "LeeDDMenuAppearance.h"

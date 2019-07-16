@@ -14,8 +14,27 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id <LeeDDMenuAppearance> appearance;
 @property (nonatomic, weak) id <LeeDDMenuDelegate>  delegate;
 @property (nonatomic, weak) id <LeeDDMenuDataSource> dataSource;
+@property (nonatomic, strong, readonly) UIView * backgroundView;
+@property (nonatomic, assign) BOOL hiddenTapBackground;
 
+/**
+ 重复点击按钮是否隐藏，默认YES
+ */
+@property (nonatomic, assign) BOOL hiddenRepeatClick;
+
+/**
+ 隐藏下拉选项
+ */
 - (void)hiddenDropMenuView;
+
+
+/**
+ 下面选项列表view
+
+ @return uiview
+ */
+- (UIView *)selectView;
+
 @end
 
 NS_ASSUME_NONNULL_END

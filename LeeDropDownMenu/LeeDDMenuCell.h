@@ -13,12 +13,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol LeeDDMenuCellProtocol <NSObject>
+@property (nonatomic, assign) LeeDDMenuTitleAlignment titleAlignment;
+@property (nonatomic, assign) CGFloat leftMargin; //LeeDDMenuTitleAlignmentLeft才有效
 + (NSString *)cellReuseIdentifier;
 + (NSString *)cellReuseIdentifierWithTag:(NSInteger)tag;
 @end
 
 @interface LeeDDMenuCell : UITableViewCell<LeeDDMenuCellProtocol>
-@property (nonatomic, assign) LeeDDMenuTitleAlignment titleAlignment;
 @end
 
 NS_ASSUME_NONNULL_END

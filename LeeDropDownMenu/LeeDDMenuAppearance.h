@@ -21,20 +21,23 @@ typedef NS_ENUM(NSInteger, LeeDDMenuTitleAlignment) {
 @protocol LeeDDMenuAppearance <NSObject>
 @optional
 // title：标题显示属性
-- (UIColor *)menu:(LeeDDMenuView *)menu textColor:(NSInteger)column;
-- (UIFont *)menu:(LeeDDMenuView *)menu textFont:(NSInteger)column;
-- (UIColor *)menu:(LeeDDMenuView *)menu selectTextColor:(NSInteger)column;
-- (UIFont *)menu:(LeeDDMenuView *)menu selectTextFont:(NSInteger)column;
-- (LeeDDMenuTitleAlignment)menu:(LeeDDMenuView *)menu textAlignment:(NSInteger)column;
-- (CGFloat)menu:(LeeDDMenuView *)menu indicatorSpace:(NSInteger)column; //标题右边小箭头和标题的间距
-- (UIColor *)menu:(LeeDDMenuView *)menu indicatorColor:(NSInteger)column;//标题右边小箭头颜色
+- (UIColor *)menu:(LeeDDMenuView *)menu textColor:(NSInteger)menuIndex;
+- (UIFont *)menu:(LeeDDMenuView *)menu textFont:(NSInteger)menuIndex;
+- (UIColor *)menu:(LeeDDMenuView *)menu selectTextColor:(NSInteger)menuIndex;
+- (UIFont *)menu:(LeeDDMenuView *)menu selectTextFont:(NSInteger)menuIndex;
+- (LeeDDMenuTitleAlignment)menu:(LeeDDMenuView *)menu textAlignment:(NSInteger)menuIndex;
+- (CGFloat)menu:(LeeDDMenuView *)menu indicatorSpace:(NSInteger)menuIndex; //标题右边小箭头和标题的间距
+- (UIColor *)menu:(LeeDDMenuView *)menu indicatorColor:(NSInteger)menuIndex;//标题右边小箭头颜色
+- (UIColor *)menu:(LeeDDMenuView *)menu lineColor:(NSInteger)menuIndex;
+- (UIEdgeInsets)menu:(LeeDDMenuView *)menu lineEdgeInsets:(NSInteger)menuIndex;
 
 // cell，选项表格属性
-- (UIColor *)menu:(LeeDDMenuView *)menu cellTitleColor:(NSInteger)column;
-- (UIFont *)menu:(LeeDDMenuView *)menu cellTitleFont:(NSInteger)column;
-- (UIColor *)menu:(LeeDDMenuView *)menu cellSelectTitleColor:(NSInteger)column;
-- (UIFont *)menu:(LeeDDMenuView *)menu cellSelectTitleFont:(NSInteger)column;
-- (LeeDDMenuTitleAlignment)menu:(LeeDDMenuTitleAlignment *)menu cellTitleAlignment:(NSInteger)column;
+- (UIColor *)menu:(LeeDDMenuView *)menu cellTitleColor:(NSInteger)column menuIndex:(NSInteger)menuIndex;
+- (UIFont *)menu:(LeeDDMenuView *)menu cellTitleFont:(NSInteger)column menuIndex:(NSInteger)menuIndex;
+- (UIColor *)menu:(LeeDDMenuView *)menu cellSelectTitleColor:(NSInteger)column menuIndex:(NSInteger)menuIndex;
+- (UIFont *)menu:(LeeDDMenuView *)menu cellSelectTitleFont:(NSInteger)column menuIndex:(NSInteger)menuIndex;
+- (LeeDDMenuTitleAlignment)menu:(LeeDDMenuView *)menu cellTitleAlignment:(NSInteger)column menuIndex:(NSInteger)menuIndex;
+- (CGFloat)menu:(LeeDDMenuView *)menu leftMargin:(LeeDDMenuIndexPath *)indexPath;
 
 @end
 
