@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LeeDDMenuAppearance.h"
+#import "LeeDDMenuDelegate.h"
+#import "LeeDDMenuDataSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
