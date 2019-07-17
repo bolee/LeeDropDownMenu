@@ -88,8 +88,13 @@
     
     // init menu view
     CGFloat defaultMenuWidth = self.viewFrame.size.width / menuCount; //默认选项列表平等分
+    CGFloat lastRight = 0;
     for (NSInteger i = 0; i < menuCount; i++) {
-        UIButton * menuButton = [[UIButton alloc] initWithFrame:CGRectMake(defaultMenuWidth * i, 0, defaultMenuWidth, self.titleFrame.size.height)];
+        CGFloat menuWidth = defaultMenuWidth;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(menu:widthForMenu:)]) {
+            menuWidth = [self.delegate menu:self widthForMenu:i];
+        }
+        UIButton * menuButton = [[UIButton alloc] initWithFrame:CGRectMake(lastRight, 0, menuWidth, self.titleFrame.size.height)];
         [menuButton setTitle:[self.dataSource menu:self menuTitleForMenu:i] forState:UIControlStateNormal];
         [menuButton setImage:[self _setIndicatorTintColor: [UIImage LeeDD_imageNamed:@"arrow_down"]] forState:UIControlStateNormal];
         UIColor * textColor = UIColor.blackColor;
@@ -106,6 +111,7 @@
         [menuButton leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:i]];
         [menuButton addTarget:self action:@selector(_menuAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:menuButton];
+        lastRight = menuButton.right;
     }
     // 上下的线
     [self addSubview:self.menuUpLine];
@@ -281,10 +287,15 @@
     }
 }
 - (void)reloadMenuData {
+    CGFloat menuIndicatorSpace = 3;
+    if (self.appearance && [self.appearance respondsToSelector:@selector(menu:indicatorSpace:)]) {
+        menuIndicatorSpace = [self.appearance menu:self indicatorSpace:self.currentMenuIndex];
+    }
     for (UIView * sv in self.subviews) {
         if ([sv isKindOfClass:UIButton.class]) {
             UIButton * menuButton = (UIButton *)sv;
             [menuButton setTitle:[self.dataSource menu:self menuTitleForMenu:menuButton.tag - 1] forState:UIControlStateNormal];
+            [menuButton leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:menuIndicatorSpace];
         }
     }
 }

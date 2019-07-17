@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)heightForSelectView:(LeeDDMenuView *)menu menuIndex:(NSInteger)menuIndex; //下拉选项高度
 - (CGFloat)widthForSelectView:(LeeDDMenuView *)menu menuIndex:(NSInteger)menuIndex; //下拉选项宽度，默认屏幕宽度
 - (CGFloat)heightForBackground; //选择区的背景高度
+- (CGFloat)menu:(LeeDDMenuView *)menu widthForMenu:(NSInteger)menuIndex; //menu按钮宽度
 - (void)menu:(LeeDDMenuView *)menu willDisplayCell:(id<LeeDDMenuCellProtocol>)cell indexPath:(LeeDDMenuIndexPath *)indexPath;
 - (void)menu:(LeeDDMenuView *)menu didSelectCell:(id<LeeDDMenuCellProtocol>)cell indexPath:(LeeDDMenuIndexPath* )indexPath;
 - (BOOL)menu:(LeeDDMenuView *)menu setSelect:(LeeDDMenuIndexPath *)indexPath; //设置选项
