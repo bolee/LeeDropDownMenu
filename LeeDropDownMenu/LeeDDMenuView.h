@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id <LeeDDMenuDataSource> dataSource;
 @property (nonatomic, strong, readonly) UIView * backgroundView;
 @property (nonatomic, assign) BOOL hiddenTapBackground;
-
+@property (nonatomic, assign) BOOL showSelectView; //是否显示选择框
 /**
  重复点击按钮是否隐藏，默认YES
  */

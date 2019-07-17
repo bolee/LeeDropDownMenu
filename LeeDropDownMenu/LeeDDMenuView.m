@@ -311,8 +311,11 @@
     self.dropView.hidden = YES;
 }
 
-#pragma mark - Var
 
+#pragma mark - Var
+- (BOOL)showSelectView {
+    return !self.dropView.isHidden;
+}
 - (UIView *)dropView {
     if (!_dropView) {
         _dropView = [[UIView alloc] initWithFrame:self.viewFrame];
