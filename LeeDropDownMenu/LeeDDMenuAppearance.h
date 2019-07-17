@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger, LeeDDMenuTitleAlignment) {
 - (UIColor *)menu:(LeeDDMenuView *)menu indicatorColor:(NSInteger)menuIndex;//标题右边小箭头颜色
 - (UIColor *)menu:(LeeDDMenuView *)menu lineColor:(NSInteger)menuIndex;
 - (UIEdgeInsets)menu:(LeeDDMenuView *)menu lineEdgeInsets:(NSInteger)menuIndex;
+//- (UIImage *)menu:(LeeDDMenuView *)menu indicatorImage:(NSInteger)menuIndex; // 标题旁边的小箭头
 
 // cell，选项表格属性
 - (UIColor *)menu:(LeeDDMenuView *)menu cellTitleColor:(NSInteger)column menuIndex:(NSInteger)menuIndex;
