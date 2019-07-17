@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)menu:(LeeDDMenuView *)menu willDisplayCell:(id<LeeDDMenuCellProtocol>)cell indexPath:(LeeDDMenuIndexPath *)indexPath;
 - (void)menu:(LeeDDMenuView *)menu didSelectCell:(id<LeeDDMenuCellProtocol>)cell indexPath:(LeeDDMenuIndexPath* )indexPath;
 - (BOOL)menu:(LeeDDMenuView *)menu setSelect:(LeeDDMenuIndexPath *)indexPath; //设置选项
+- (void)menu:(LeeDDMenuView *)menu didSelectMenu:(NSInteger)menuIndex menuButton:(UIButton *)button; //点击menu
 
 @end
 

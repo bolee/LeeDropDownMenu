@@ -8,5 +8,5 @@ Pod::Spec.new do |spec|
   spec.platform					= :ios, "8.0"
   spec.source					= { :git => "https://github.com/bolee/LeeDropDownMenu.git", :branch => "master" }
   spec.source_files				= "LeeDropDownMenu/*"
-  spec.resource       = 'LeeDropDownMenu/LeeDropDownMenu.xcassets'
+  spec.resource       = 'LeeDropDownMenu/LeeDropDownMenu.bundle'
 end

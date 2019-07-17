@@ -11,6 +11,7 @@
 #import "UIView+leeDDExtension.h"
 #import "UIButton+leeDD_ImageTitle.h"
 #import "LeeDDMenuIndexPath.h"
+#import "UIImage+leeDD_Bundle.h"
 
 #define kLeeDDScreeWidth UIApplication.sharedApplication.keyWindow.frame.size.width
 
@@ -99,7 +100,7 @@
     for (NSInteger i = 0; i < menuCount; i++) {
         UIButton * menuButton = [[UIButton alloc] initWithFrame:CGRectMake(defaultMenuWidth * i, 0, defaultMenuWidth, self.titleFrame.size.height)];
         [menuButton setTitle:[self.dataSource menu:self menuTitleForMenu:i] forState:UIControlStateNormal];
-        [menuButton setImage:[UIImage imageNamed:@"arrow_down"] forState:UIControlStateNormal];
+        [menuButton setImage:[UIImage LeeDD_imageNamed:@"arrow_down"] forState:UIControlStateNormal];
         
         UIColor * textColor = UIColor.blackColor;
         if (self.appearance && [self.appearance respondsToSelector:@selector(menu:textColor:)]) {
@@ -243,12 +244,15 @@
 
 #pragma mark - private action
 - (void)_menuAction:(UIButton *)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(menu:didSelectMenu:menuButton:)]) {
+        [self.delegate menu:self didSelectMenu:sender.tag - 1 menuButton:sender];
+    }
     if (!self.dropView.isHidden) {
         [self hiddenDropMenuView];
         if (self.hiddenRepeatClick) {
             // 重复点击，是否隐藏
             UIButton * lastButton = [self viewWithTag:self.currentMenuIndex + 1];
-            [lastButton setImage:[UIImage imageNamed:@"arrow_down"] forState:UIControlStateNormal];
+            [lastButton setImage:[UIImage LeeDD_imageNamed:@"arrow_down"] forState:UIControlStateNormal];
             [lastButton leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:self.currentMenuIndex]];
             return;
         }
@@ -259,11 +263,11 @@
     }
     if (self.currentMenuIndex != sender.tag - 1) {
         UIButton * lastButton = [self viewWithTag:self.currentMenuIndex + 1];
-        [lastButton setImage:[UIImage imageNamed:@"arrow_down"] forState:UIControlStateNormal];
+        [lastButton setImage:[UIImage LeeDD_imageNamed:@"arrow_down"] forState:UIControlStateNormal];
         [lastButton leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:self.currentMenuIndex]];
     }
     
-    [sender setImage:[UIImage imageNamed:@"arrow_up"] forState:UIControlStateNormal];
+    [sender setImage:[UIImage LeeDD_imageNamed:@"arrow_up"] forState:UIControlStateNormal];
     [sender leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:sender.tag - 1]];
     self.currentMenuIndex = sender.tag - 1;
     if (!self.dropView.superview) {
@@ -316,7 +320,7 @@
     }
     return _dropView;
 }
-- (NSMutableDictionary<NSNumber *,LeeDDMenuIndexPath *> *)selectIndexPath {
+- (NSMutableDictionary<NSString *,LeeDDMenuIndexPath *> *)selectIndexPath {
     if (!_selectIndexPath) {
         _selectIndexPath = [@{} mutableCopy];
     }
