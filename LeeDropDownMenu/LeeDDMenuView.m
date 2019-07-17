@@ -244,6 +244,7 @@
 
 #pragma mark - private action
 - (void)_menuAction:(UIButton *)sender {
+    // TODO: 回调的menuIndex和self.currentMenuIndex不一致
     if (self.delegate && [self.delegate respondsToSelector:@selector(menu:didSelectMenu:menuButton:)]) {
         [self.delegate menu:self didSelectMenu:sender.tag - 1 menuButton:sender];
     }

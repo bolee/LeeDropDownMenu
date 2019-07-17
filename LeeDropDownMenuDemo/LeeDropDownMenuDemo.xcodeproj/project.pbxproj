@@ -22,8 +22,8 @@
 		9BF771E822DDCB26008554FB /* LeeDDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771E322DDCB26008554FB /* LeeDDMenuView.m */; };
 		9BF771E922DDCB26008554FB /* LeeDDMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771E522DDCB26008554FB /* LeeDDMenuCell.m */; };
 		9BF771EF22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771EE22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m */; };
-		9BF771F222DEC6D6008554FB /* LeeDropDownMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9BF771F122DEC6D6008554FB /* LeeDropDownMenu.bundle */; };
 		9BF771F522DEC7C1008554FB /* UIImage+leeDD_Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF771F422DEC7C1008554FB /* UIImage+leeDD_Bundle.m */; };
+		9BF771F722DED083008554FB /* LeeDropDownMenu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF771F622DED082008554FB /* LeeDropDownMenu.xcassets */; };
 		A5E06DD8AAEFC65D1B2B7114 /* Pods_LeeDropDownMenuDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33B76AE847AFD6D2CFC94D6 /* Pods_LeeDropDownMenuDemo.framework */; };
 		ABD24A6A79427F0D43FEF6E0 /* Pods_LeeDropDownMenuDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F697155351520EC40333F599 /* Pods_LeeDropDownMenuDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,9 +81,9 @@
 		9BF771E522DDCB26008554FB /* LeeDDMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeDDMenuCell.m; sourceTree = "<group>"; };
 		9BF771ED22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+leeDD_ImageTitle.h"; sourceTree = "<group>"; };
 		9BF771EE22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+leeDD_ImageTitle.m"; sourceTree = "<group>"; };
-		9BF771F122DEC6D6008554FB /* LeeDropDownMenu.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LeeDropDownMenu.bundle; sourceTree = "<group>"; };
 		9BF771F322DEC7C1008554FB /* UIImage+leeDD_Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+leeDD_Bundle.h"; sourceTree = "<group>"; };
 		9BF771F422DEC7C1008554FB /* UIImage+leeDD_Bundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+leeDD_Bundle.m"; sourceTree = "<group>"; };
+		9BF771F622DED082008554FB /* LeeDropDownMenu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LeeDropDownMenu.xcassets; sourceTree = "<group>"; };
 		AA6B1230D8F5BBCBB3B80751 /* Pods-LeeDropDownMenuDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeeDropDownMenuDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-LeeDropDownMenuDemoTests/Pods-LeeDropDownMenuDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B33B76AE847AFD6D2CFC94D6 /* Pods_LeeDropDownMenuDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeeDropDownMenuDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1CAA4DF3959E65CD9C26F03 /* Pods-LeeDropDownMenuDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeeDropDownMenuDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-LeeDropDownMenuDemoUITests/Pods-LeeDropDownMenuDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		9BF771D922DDCB25008554FB /* LeeDropDownMenu */ = {
 			isa = PBXGroup;
 			children = (
-				9BF771F122DEC6D6008554FB /* LeeDropDownMenu.bundle */,
+				9BF771F622DED082008554FB /* LeeDropDownMenu.xcassets */,
 				9BF771E122DDCB26008554FB /* LeeDDMenuAppearance.h */,
 				9BF771DE22DDCB26008554FB /* LeeDDMenuCell.h */,
 				9BF771E522DDCB26008554FB /* LeeDDMenuCell.m */,
@@ -335,7 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BF771F222DEC6D6008554FB /* LeeDropDownMenu.bundle in Resources */,
+				9BF771F722DED083008554FB /* LeeDropDownMenu.xcassets in Resources */,
 				9BF771B322DDCA77008554FB /* LaunchScreen.storyboard in Resources */,
 				9BF771B022DDCA77008554FB /* Assets.xcassets in Resources */,
 				9BF771AB22DDCA76008554FB /* Main.storyboard in Resources */,
