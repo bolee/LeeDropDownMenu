@@ -18,6 +18,6 @@
         NSString * bundlePath = [[NSBundle bundleForClass:[LeeDDMenuView class]].resourcePath stringByAppendingPathComponent:@"/LeeDropDownMenu.bundle"];
         resourceBunle = [NSBundle bundleWithPath:bundlePath];
     });
-    return [UIImage imageNamed:@"arrow_down" inBundle:resourceBunle compatibleWithTraitCollection:nil];
+    return [UIImage imageNamed:name inBundle:resourceBunle compatibleWithTraitCollection:nil];
 }
 @end

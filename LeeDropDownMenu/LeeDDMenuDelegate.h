@@ -19,13 +19,14 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 - (CGFloat)menu:(LeeDDMenuView *)menu heightForRowAtColumn:(NSInteger)column menuIndex:(NSInteger)menuIndex;
 - (CGFloat)menu:(LeeDDMenuView *)menu widthForRowAtColumn:(NSInteger)column menuIndex:(NSInteger)menuIndex;
-- (CGFloat)heightForDropView:(LeeDDMenuView *)menu; //下拉选项高度
-- (CGFloat)widthForDropView:(LeeDDMenuView *)menu; //下拉选项宽度，默认屏幕宽度
+- (CGFloat)heightForSelectView:(LeeDDMenuView *)menu menuIndex:(NSInteger)menuIndex; //下拉选项高度
+- (CGFloat)widthForSelectView:(LeeDDMenuView *)menu menuIndex:(NSInteger)menuIndex; //下拉选项宽度，默认屏幕宽度
 - (CGFloat)heightForBackground; //选择区的背景高度
 - (void)menu:(LeeDDMenuView *)menu willDisplayCell:(id<LeeDDMenuCellProtocol>)cell indexPath:(LeeDDMenuIndexPath *)indexPath;
 - (void)menu:(LeeDDMenuView *)menu didSelectCell:(id<LeeDDMenuCellProtocol>)cell indexPath:(LeeDDMenuIndexPath* )indexPath;
 - (BOOL)menu:(LeeDDMenuView *)menu setSelect:(LeeDDMenuIndexPath *)indexPath; //设置选项
 - (void)menu:(LeeDDMenuView *)menu didSelectMenu:(NSInteger)menuIndex menuButton:(UIButton *)button; //点击menu
+- (void)menu:(LeeDDMenuView *)menu selectViewStatus:(BOOL)isShow; //选项框隐藏状态
 
 @end
 

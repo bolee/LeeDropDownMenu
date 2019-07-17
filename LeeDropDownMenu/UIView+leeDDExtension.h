@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)leeDD_bottom;
 - (CGFloat)leeDD_width;
 - (CGFloat)leeDD_height;
+- (CGFloat)LeeDD_x;
+- (CGFloat)LeeDD_y;
+- (CGPoint)LeeDD_origin;
 @end
 
 NS_ASSUME_NONNULL_END

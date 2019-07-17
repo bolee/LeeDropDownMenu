@@ -32,6 +32,22 @@
     self.dataSource = @[menu1Data, menu2Data];
     self.menuTitles = @[@"筛选", @"城市"];
     self.sortTitles = @[@"升序", @"降序"];
+    
+    
+    UIView * blueView = [[UIView alloc] initWithFrame:CGRectMake(10, 150, 200, 300)];
+    blueView.backgroundColor = UIColor.blueColor;
+    [self.view addSubview:blueView];
+    
+    UIView * redView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 100, 200)];
+    redView.backgroundColor = UIColor.redColor;
+    [blueView addSubview:redView];
+    
+    UIView * pupView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
+    pupView.backgroundColor = UIColor.purpleColor;
+    [redView addSubview:pupView];
+    
+    CGPoint p = [pupView convertPoint:pupView.LeeDD_origin toView:self.view];
+    NSLog(@"pppp=%@", NSStringFromCGPoint(p));
 }
 
 #pragma mark - LeeDD datasource

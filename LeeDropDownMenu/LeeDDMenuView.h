@@ -25,11 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL hiddenRepeatClick;
 
+
 /**
  隐藏下拉选项
  */
 - (void)hiddenDropMenuView;
-
 
 /**
  下面选项列表view
@@ -37,6 +37,20 @@ NS_ASSUME_NONNULL_BEGIN
  @return uiview
  */
 - (UIView *)selectView;
+
+
+/**
+ 下拉选项列表显示位置，默认显示到menuView的子控件
+
+ @param toView 显示父view
+ */
+- (void)showToView:(UIView *)toView;
+
+
+/**
+ 刷新menu
+ */
+- (void)reloadMenuData;
 
 @end
 

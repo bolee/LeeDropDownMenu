@@ -30,5 +30,13 @@
 - (CGFloat)leeDD_height {
     return self.frame.size.height;
 }
-
+- (CGFloat)LeeDD_x {
+    return self.frame.origin.x;
+}
+- (CGFloat)LeeDD_y {
+    return self.frame.origin.y;
+}
+- (CGPoint)LeeDD_origin {
+    return self.frame.origin;
+}
 @end

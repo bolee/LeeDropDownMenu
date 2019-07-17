@@ -12,6 +12,7 @@
 #import "UIButton+leeDD_ImageTitle.h"
 #import "LeeDDMenuIndexPath.h"
 #import "UIImage+leeDD_Bundle.h"
+#import "UIImage+pp_TintColor.h"
 
 #define kLeeDDScreeWidth UIApplication.sharedApplication.keyWindow.frame.size.width
 
@@ -33,36 +34,23 @@
 @property (nonatomic, strong) NSMutableDictionary<NSString *, LeeDDMenuIndexPath *> * selectIndexPath;
 @property (nonatomic, assign) NSInteger currentMenuIndex; //
 @property (nonatomic, strong, readwrite) UIView * backgroundView;
-
+@property (nonatomic, weak) UIView * dropDownSuperView; //显示下拉选项的父视图
 @end
 
 @implementation LeeDDMenuView
 
-#pragma mark - Init
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-//        [self _initData];
-    }
-    return self;
-}
+#pragma mark - life cycle
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.titleFrame = frame;
-//        [self _initData];
     }
     return self;
 }
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-//        [self _initData];
-    }
-    return self;
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    self.titleFrame = frame;
 }
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -74,18 +62,21 @@
     }
 }
 
+#pragma mark - init
+
 - (void)_initData {
     self.hiddenRepeatClick = YES;
+    self.hiddenTapBackground = YES;
     if (self.frame.size.width <= 0 || self.frame.size.height <= 0) {
         self.titleFrame = CGRectMake(0, 0, kLeeDDScreeWidth, kLeeDDDefaultTitleHeight);
     }
     CGFloat vHeight = kLeeDDDefaultViewHeight;
     CGFloat vWidth = self.leeDD_width;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(heightForDropView:)]) {
-        vHeight = [self.delegate heightForDropView:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(heightForSelectView:menuIndex:)]) {
+        vHeight = [self.delegate heightForSelectView:self menuIndex:self.currentMenuIndex];
     }
-    if (self.delegate && [self.delegate respondsToSelector:@selector(widthForDropView:)]) {
-        vWidth = [self.delegate widthForDropView:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(widthForSelectView:menuIndex:)]) {
+        vWidth = [self.delegate widthForSelectView:self menuIndex:self.currentMenuIndex];
     }
     self.viewFrame = CGRectMake(0, self.leeDD_bottom, vWidth, vHeight);
     
@@ -100,11 +91,13 @@
     for (NSInteger i = 0; i < menuCount; i++) {
         UIButton * menuButton = [[UIButton alloc] initWithFrame:CGRectMake(defaultMenuWidth * i, 0, defaultMenuWidth, self.titleFrame.size.height)];
         [menuButton setTitle:[self.dataSource menu:self menuTitleForMenu:i] forState:UIControlStateNormal];
-        [menuButton setImage:[UIImage LeeDD_imageNamed:@"arrow_down"] forState:UIControlStateNormal];
-        
+        [menuButton setImage:[self _setIndicatorTintColor: [UIImage LeeDD_imageNamed:@"arrow_down"]] forState:UIControlStateNormal];
         UIColor * textColor = UIColor.blackColor;
         if (self.appearance && [self.appearance respondsToSelector:@selector(menu:textColor:)]) {
             textColor = [self.appearance menu:self textColor:i];
+        }
+        if (self.appearance && [self.appearance respondsToSelector:@selector(menu:textFont:)]) {
+            menuButton.titleLabel.font = [self.appearance menu:self textFont:self.currentMenuIndex];
         }
         [menuButton setTitleColor:textColor forState:UIControlStateNormal];
         
@@ -134,7 +127,7 @@
         bgHeight = [self.delegate heightForBackground];
     }
     self.backgroundView.frame = CGRectMake(0, 0, self.dropView.leeDD_width, bgHeight);
-    self.dropView.frame = CGRectMake(0, self.leeDD_bottom, self.leeDD_width, bgHeight);
+    
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_tapGesture:)];
     tapGesture.delegate = self;
     [self.backgroundView addGestureRecognizer:tapGesture];
@@ -144,6 +137,13 @@
     // 初始化表格和dropView一样高，默认有2列，需要点击menu按钮时候才重新设置尺寸
     self.leftTableView.frame = CGRectMake(0, 0, self.leeDD_width / 2.0, self.viewFrame.size.height);
     self.rightTableView.frame = CGRectMake(self.leftTableView.leeDD_right, 0, self.leftTableView.leeDD_width, self.leftTableView.leeDD_height);
+    // add drop view
+    if (self.dropDownSuperView) {
+        [self.dropDownSuperView addSubview:self.dropView];
+    } else {
+        UIView * superView = self.superview;
+        [superView addSubview:self.dropView];
+    }
 }
 
 #pragma mark - UITableView Delegate & DataSource
@@ -236,12 +236,58 @@
         [self hiddenDropMenuView];
     }
 }
+- (void)_showDropView {
+    self.dropView.hidden = NO;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(menu:selectViewStatus:)]) {
+        [self.delegate menu:self selectViewStatus:YES];
+    }
+}
+- (UIImage *)_setIndicatorTintColor:(UIImage *)img {
+    UIColor * tintColor = nil;
+    if (self.appearance && [self.appearance respondsToSelector:@selector(menu:indicatorColor:)]) {
+        tintColor = [self.appearance menu:self indicatorColor:self.currentMenuIndex];
+    }
+    if (tintColor) {
+        return [img LeeDD_imageByTintColor:tintColor];
+    }
+    return img;
+}
+
+- (void)_setDropViewFrame {
+    // 判断是否加载其他view上
+    CGFloat bgHeight = self.dropView.leeDD_height;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(heightForBackground)]) {
+        bgHeight = [self.delegate heightForBackground];
+    }
+    if (self.dropDownSuperView && self.superview != self.dropDownSuperView) {
+        // 需要映射位置
+        CGRect sFrame = [self.dropDownSuperView convertRect:self.frame fromView:self.superview];
+        self.dropView.frame= CGRectMake(0, sFrame.origin.y + sFrame.size.height, sFrame.size.width, bgHeight);
+    } else {
+        self.dropView.frame = CGRectMake(0, self.leeDD_bottom, self.leeDD_width, bgHeight);
+    }
+}
 
 #pragma mark - Method
 - (UIView *)selectView {
     return self.dropView;
 }
-
+- (void)showToView:(UIView *)toView {
+    self.dropDownSuperView = toView;
+    if (!_leftTableView) {
+        @synchronized (self) {
+            [self _initData];
+        }
+    }
+}
+- (void)reloadMenuData {
+    for (UIView * sv in self.subviews) {
+        if ([sv isKindOfClass:UIButton.class]) {
+            UIButton * menuButton = (UIButton *)sv;
+            [menuButton setTitle:[self.dataSource menu:self menuTitleForMenu:menuButton.tag - 1] forState:UIControlStateNormal];
+        }
+    }
+}
 #pragma mark - private action
 - (void)_menuAction:(UIButton *)sender {
     // TODO: 回调的menuIndex和self.currentMenuIndex不一致
@@ -253,7 +299,7 @@
         if (self.hiddenRepeatClick) {
             // 重复点击，是否隐藏
             UIButton * lastButton = [self viewWithTag:self.currentMenuIndex + 1];
-            [lastButton setImage:[UIImage LeeDD_imageNamed:@"arrow_down"] forState:UIControlStateNormal];
+            [lastButton setImage:[self _setIndicatorTintColor:[UIImage LeeDD_imageNamed:@"arrow_down"]] forState:UIControlStateNormal];
             [lastButton leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:self.currentMenuIndex]];
             return;
         }
@@ -264,17 +310,14 @@
     }
     if (self.currentMenuIndex != sender.tag - 1) {
         UIButton * lastButton = [self viewWithTag:self.currentMenuIndex + 1];
-        [lastButton setImage:[UIImage LeeDD_imageNamed:@"arrow_down"] forState:UIControlStateNormal];
+        [lastButton setImage:[self _setIndicatorTintColor:[UIImage LeeDD_imageNamed:@"arrow_down"]] forState:UIControlStateNormal];
         [lastButton leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:self.currentMenuIndex]];
     }
     
-    [sender setImage:[UIImage LeeDD_imageNamed:@"arrow_up"] forState:UIControlStateNormal];
+    [sender setImage:[self _setIndicatorTintColor:[UIImage LeeDD_imageNamed:@"arrow_up"]] forState:UIControlStateNormal];
     [sender leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:sender.tag - 1]];
     self.currentMenuIndex = sender.tag - 1;
-    if (!self.dropView.superview) {
-        UIView * superView = self.superview;
-        [superView addSubview:self.dropView];
-    }
+    
     // 检测列数
     NSInteger column = 2;
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfColumns:menu:)]) {
@@ -288,27 +331,38 @@
         self.rightTableView.hidden = NO;
     }
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(menu:widthForRowAtColumn:menuIndex:)]) {
-        CGFloat leftWidth = [self.delegate menu:self widthForRowAtColumn:0 menuIndex:self.currentMenuIndex];
-        self.leftTableView.frame = CGRectMake(0, 0, leftWidth, self.viewFrame.size.height);
-        if (!self.rightTableView.hidden) {
-            CGFloat rightWidth = [self.delegate menu:self widthForRowAtColumn:1 menuIndex:self.currentMenuIndex];
-            self.rightTableView.frame = CGRectMake(self.leftTableView.leeDD_right, self.leftTableView.leeDD_top, rightWidth, self.leftTableView.leeDD_height);
-        }
-    } else if (self.rightTableView.isHidden) {
-        //只显示一列
-        self.leftTableView.frame = CGRectMake(0, 0, self.dropView.leeDD_width, self.viewFrame.size.height);
+    // 高度
+    CGFloat tblHeight = self.viewFrame.size.height;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(heightForSelectView:menuIndex:)]) {
+        tblHeight = [self.delegate heightForSelectView:self menuIndex:self.currentMenuIndex];
     }
-    self.dropView.hidden = NO;
+    // 宽度
+    CGFloat leftWidth = self.rightTableView.isHidden ? self.leeDD_width : self.leeDD_width / 2.0;
+    CGFloat rightWidth = self.rightTableView.isHidden ? 0 : leftWidth;
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(menu:widthForRowAtColumn:menuIndex:)]) {
+        leftWidth = [self.delegate menu:self widthForRowAtColumn:0 menuIndex:self.currentMenuIndex];
+        rightWidth = [self.delegate menu:self widthForRowAtColumn:1 menuIndex:self.currentMenuIndex];
+    }
+    self.leftTableView.frame = CGRectMake(0, 0, leftWidth, tblHeight);
+    
+    if (!self.rightTableView.hidden) {
+        self.rightTableView.frame = CGRectMake(self.leftTableView.leeDD_right, self.leftTableView.leeDD_top, rightWidth, self.leftTableView.leeDD_height);
+    }
     [self.leftTableView reloadData];
     if (!self.rightTableView.isHidden) {
         [self.rightTableView reloadData];
     }
+    [self _setDropViewFrame];
+    [self _showDropView];
 }
 
 #pragma mark - Action
 - (void)hiddenDropMenuView {
     self.dropView.hidden = YES;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(menu:selectViewStatus:)]) {
+        [self.delegate menu:self selectViewStatus:NO];
+    }
 }
 
 
@@ -319,7 +373,7 @@
 - (UIView *)dropView {
     if (!_dropView) {
         _dropView = [[UIView alloc] initWithFrame:self.viewFrame];
-        _dropView.backgroundColor = UIColor.whiteColor;
+        _dropView.backgroundColor = UIColor.clearColor;
         _dropView.hidden = YES;
     }
     return _dropView;
