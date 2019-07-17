@@ -62,7 +62,8 @@
     return [[self.dataSource objectAtIndex:indexPath.menu] objectAtIndex:indexPath.row];
 }
 - (LeeDDMenuTitleAlignment)menu:(LeeDDMenuView *)menu cellTitleAlignment:(NSInteger)column menuIndex:(NSInteger)menuIndex {
-    return 0 == menuIndex ? LeeDDMenuTitleAlignmentLeft : LeeDDMenuTitleAlignmentCenter;
+//    return 0 == menuIndex ? LeeDDMenuTitleAlignmentLeft : LeeDDMenuTitleAlignmentCenter;
+    return LeeDDMenuTitleAlignmentLeft;
 }
 - (UIColor *)menu:(LeeDDMenuView *)menu cellTitleColor:(NSInteger)column menuIndex:(NSInteger)menuIndex {
     return UIColor.blackColor;
@@ -82,8 +83,20 @@
 - (CGFloat)menu:(LeeDDMenuView *)menu leftMargin:(LeeDDMenuIndexPath *)indexPath {
     return 0 == indexPath.column ? 16 : 0;
 }
+- (BOOL)menu:(LeeDDMenuView *)menu setSelect:(LeeDDMenuIndexPath *)indexPath {
+    if (0 == indexPath.row) {
+        return YES;
+    }
+    return NO;
+}
 - (CGFloat)heightForBackground {
     return self.view.leeDD_height;
+}
+- (CGFloat)menu:(LeeDDMenuView *)menu heightForRowAtColumn:(NSInteger)column menuIndex:(NSInteger)menuIndex {
+    return 40;
+}
+- (CGFloat)heightForDropView:(LeeDDMenuView *)menu {
+    return 160;
 }
 
 @end

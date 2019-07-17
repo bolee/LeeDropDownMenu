@@ -188,6 +188,13 @@
         dCell.leftMargin = [self.appearance menu:self leftMargin:[LeeDDMenuIndexPath initPathWithColumn:tableView.tag - 1 withRow:indexPath.row withMenuIndex:self.currentMenuIndex]];
     }
     
+    // 代理设置是否选中
+    if (self.delegate && [self.delegate respondsToSelector:@selector(menu:setSelect:)]) {
+        BOOL isSelect = [self.delegate menu:self setSelect:[LeeDDMenuIndexPath initPathWithColumn:tableView.tag - 1 withRow:indexPath.row withMenuIndex:self.currentMenuIndex]];
+        if (isSelect && self.appearance && [self.appearance respondsToSelector:@selector(menu:cellSelectTitleColor:menuIndex:)]) {
+            cell.textLabel.textColor = [self.appearance menu:self cellSelectTitleColor:tableView.tag - 1 menuIndex:self.currentMenuIndex];
+        }
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

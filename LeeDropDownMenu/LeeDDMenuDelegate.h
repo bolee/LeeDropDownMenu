@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)heightForBackground; //选择区的背景高度
 - (void)menu:(LeeDDMenuView *)menu willDisplayCell:(id<LeeDDMenuCellProtocol>)cell indexPath:(LeeDDMenuIndexPath *)indexPath;
 - (void)menu:(LeeDDMenuView *)menu didSelectCell:(id<LeeDDMenuCellProtocol>)cell indexPath:(LeeDDMenuIndexPath* )indexPath;
+- (BOOL)menu:(LeeDDMenuView *)menu setSelect:(LeeDDMenuIndexPath *)indexPath; //设置选项
 
 @end
 
