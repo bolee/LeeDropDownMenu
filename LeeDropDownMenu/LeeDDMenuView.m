@@ -211,6 +211,7 @@
     // 点击右边一个需要隐藏掉
     if (self.rightTableView.hidden || self.rightTableView == tableView) {
         [self hiddenDropMenuView];
+        
     } else {
         // 显示下一个
         [self.rightTableView reloadData];
@@ -309,6 +310,7 @@
         [self hiddenDropMenuView];
         if (self.hiddenRepeatClick) {
             // 重复点击，是否隐藏
+            // TODO: 图片显示错误
             UIButton * lastButton = [self viewWithTag:self.currentMenuIndex + 1];
             [lastButton setImage:[self _setIndicatorTintColor:[UIImage LeeDD_imageNamed:@"arrow_down"]] forState:UIControlStateNormal];
             [lastButton leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:self.currentMenuIndex]];
@@ -374,6 +376,10 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(menu:selectViewStatus:)]) {
         [self.delegate menu:self selectViewStatus:NO];
     }
+    // 还原menu图标
+    PPBaseButton * button = [self viewWithTag:self.currentMenuIndex + 1];
+    [button setImage:[self _setIndicatorTintColor:[UIImage LeeDD_imageNamed:@"arrow_down"]] forState:UIControlStateNormal];
+    [button leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:self.currentMenuIndex]];
 }
 
 
