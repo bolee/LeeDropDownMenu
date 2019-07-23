@@ -208,9 +208,7 @@
 		9BF771D922DDCB25008554FB /* LeeDropDownMenu */ = {
 			isa = PBXGroup;
 			children = (
-				9BF7721422DF0B24008554FB /* UIImage+pp_TintColor.h */,
-				9BF7721522DF0B25008554FB /* UIImage+pp_TintColor.m */,
-				9BF771F622DED082008554FB /* LeeDropDownMenu.xcassets */,
+				9BF771E422DDCB26008554FB /* LeeDDMenu.h */,
 				9BF771E122DDCB26008554FB /* LeeDDMenuAppearance.h */,
 				9BF771DE22DDCB26008554FB /* LeeDDMenuCell.h */,
 				9BF771E522DDCB26008554FB /* LeeDDMenuCell.m */,
@@ -220,13 +218,15 @@
 				9BF771E222DDCB26008554FB /* LeeDDMenuIndexPath.m */,
 				9BF771DC22DDCB25008554FB /* LeeDDMenuView.h */,
 				9BF771E322DDCB26008554FB /* LeeDDMenuView.m */,
-				9BF771DF22DDCB26008554FB /* UIView+leeDDExtension.h */,
-				9BF771DA22DDCB25008554FB /* UIView+leeDDExtension.m */,
+				9BF771F622DED082008554FB /* LeeDropDownMenu.xcassets */,
 				9BF771ED22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.h */,
 				9BF771EE22DDCF4B008554FB /* UIButton+leeDD_ImageTitle.m */,
-				9BF771E422DDCB26008554FB /* LeeDDMenu.h */,
 				9BF771F322DEC7C1008554FB /* UIImage+leeDD_Bundle.h */,
 				9BF771F422DEC7C1008554FB /* UIImage+leeDD_Bundle.m */,
+				9BF7721422DF0B24008554FB /* UIImage+pp_TintColor.h */,
+				9BF7721522DF0B25008554FB /* UIImage+pp_TintColor.m */,
+				9BF771DF22DDCB26008554FB /* UIView+leeDDExtension.h */,
+				9BF771DA22DDCB25008554FB /* UIView+leeDDExtension.m */,
 			);
 			name = LeeDropDownMenu;
 			path = ../LeeDropDownMenu;

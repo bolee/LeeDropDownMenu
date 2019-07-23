@@ -111,7 +111,7 @@
         [menuButton leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:i]];
         [menuButton addTarget:self action:@selector(_menuAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:menuButton];
-        lastRight = menuButton.right;
+        lastRight = menuButton.leeDD_right;
     }
     // 上下的线
     [self addSubview:self.menuUpLine];
@@ -377,7 +377,7 @@
         [self.delegate menu:self selectViewStatus:NO];
     }
     // 还原menu图标
-    PPBaseButton * button = [self viewWithTag:self.currentMenuIndex + 1];
+    UIButton * button = [self viewWithTag:self.currentMenuIndex + 1];
     [button setImage:[self _setIndicatorTintColor:[UIImage LeeDD_imageNamed:@"arrow_down"]] forState:UIControlStateNormal];
     [button leeDD_setLayoutStyle:LeeDDButtonLayoutStyleImageRight spacing:[self _menuIndicatorSpace:self.currentMenuIndex]];
 }
