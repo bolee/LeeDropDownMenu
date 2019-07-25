@@ -200,6 +200,8 @@
         BOOL isSelect = [self.delegate menu:self setSelect:[LeeDDMenuIndexPath initPathWithColumn:tableView.tag - 1 withRow:indexPath.row withMenuIndex:self.currentMenuIndex]];
         if (isSelect && self.appearance && [self.appearance respondsToSelector:@selector(menu:cellSelectTitleColor:menuIndex:)]) {
             cell.textLabel.textColor = [self.appearance menu:self cellSelectTitleColor:tableView.tag - 1 menuIndex:self.currentMenuIndex];
+            NSString * selectIndex = [NSString stringWithFormat:@"Menu:%tu-Column:%tu", self.currentMenuIndex, tableView.tag - 1];
+            [self.selectIndexPath setObject:[LeeDDMenuIndexPath initPathWithColumn:tableView.tag - 1 withRow:indexPath.row withMenuIndex:self.currentMenuIndex] forKey:selectIndex];
         }
     }
 }
